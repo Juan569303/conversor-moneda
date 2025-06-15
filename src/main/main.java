@@ -12,7 +12,7 @@ public class main {
 
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("Elige una opcion");
+            System.out.println("Elige una opcion por favor");
             option = scanner.nextInt();
 
             switch (option){
