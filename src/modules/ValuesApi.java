@@ -1,4 +1,4 @@
 package modules;
 
-public record ValuesApi(int USD, int COP, int ARS, int BRL) {
+public record ValuesApi(double USD, double COP, double ARS, double BRL) {
 }

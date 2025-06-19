@@ -33,8 +33,10 @@ public class GetApi {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println(response.body());
-        return new Gson().fromJson(response.body(), ValuesApi.class);
+
+        ApiResponse result = gson.fromJson(response.body(), ApiResponse.class);
+        ValuesApi values = result.conversion_rates();
+        return values;
     }
 
 

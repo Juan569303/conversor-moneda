@@ -1,27 +1,36 @@
 package maths;
 
-import modules.LocalValues;
+import modules.ApiResponse;
+import modules.GetApi;
+import modules.ValuesApi;
 
 public class Conversion {
 
-    LocalValues localValues = new LocalValues();
+    GetApi getApi = new GetApi();
 
-    public int UsdToArg(int base){
-        return (base*localValues.getPesoArgentino());
+
+    public double UsdToArg(double mount, String selection){
+        ValuesApi values = getApi.getValues(selection);
+        return (mount*values.ARS());
     }
-    public int ArgToUsd(int base){
-        return (base*localValues.getDolar());
+    public double ArgToUsd(double mount, String selection){
+        ValuesApi values = getApi.getValues(selection);
+        return (mount*values.USD());
     }
-    public int UsdToBrl(int base){
-        return (base*localValues.getRealBrasileno());
+    public double UsdToBrl(double mount, String selection){
+        ValuesApi values = getApi.getValues(selection);
+        return (mount*values.BRL());
     }
-    public int BrlToUsd(int base){
-        return (base*localValues.getDolar());
+    public double BrlToUsd(double mount, String selection){
+        ValuesApi values = getApi.getValues(selection);
+        return (mount*values.USD());
     }
-    public int UsdToCop(int base){
-        return (base*localValues.getPesoColombiano());
+    public double UsdToCop(double mount, String selection){
+        ValuesApi values = getApi.getValues(selection);
+        return (mount*values.COP());
     }
-    public int CopToUsd(int base){
-        return (base*localValues.getDolar());
+    public double CopToUsd(double mount, String selection){
+        ValuesApi values = getApi.getValues(selection);
+        return (mount*values.USD());
     }
 }
